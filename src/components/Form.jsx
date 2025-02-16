@@ -2,23 +2,23 @@ import Button from "./Button";
 
 function Form({ onGenerateQr, onChange }) {
   return (
-    <form className="flex flex-col py-4 gap-y-3 w-4/12 min-w-fit"
+    <form className="flex flex-col py-4 px-4 gap-y-3 w-4/12 min-w-fit"
       onSubmit={(e) => onGenerateQr(e)}
     >
       <div className="flex flex-row items-center">
         <input
           className={`
             border-2 border-slate-400 rounded
-            outline-none 
+            outline-hidden 
             px-2 py-1 mr-2
-            text-sm flex-1
+            text-sm 
           `}
           type="text" name="data" id="qrcodeText" required
           onChange={(e) => onChange(e)}
         />
         <Button type="submit">Generate</Button>
       </div>
-      <div className="flex flex-row gap-x-4">
+      <div className="flex flex-col gap-x-4">
         <div className="flex gap-x-1 flex-1">
           <label htmlFor="bgColor">Background Color: </label>
           <input className="bg-transparent cursor-pointer"
